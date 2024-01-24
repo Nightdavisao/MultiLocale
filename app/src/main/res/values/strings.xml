@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MultiLocale</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="remove_locale">Remove locale</string>
+    <string name="add_locale">Add a locale</string>
+    <string name="locale_dialog_title">Add a language</string>
+    <string name="save_locale_config">Save locales</string>
+    <string name="delete_locale">Delete locale</string>
+    <string name="drag_handle">Drag handle</string>
+</resources>
