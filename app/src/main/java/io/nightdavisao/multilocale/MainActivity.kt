@@ -137,8 +137,9 @@ class MainActivity : AppCompatActivity() {
             }
             val adbCommand = "adb shell pm grant $packageName android.permission.CHANGE_CONFIGURATION"
             val message = "You must grant the CHANGE_CONFIGURATION permission to this app. " +
-                    "Please run the following command through ADB:<br><br>" +
-                    "<b>$adbCommand</b>"
+                    "Please run the following command in an ADB shell:<br><br>" +
+                    "<b>$adbCommand</b>" +
+                    "<br><br>Clicking \"OK\" will copy this command to your clipboard."
             val dialog = MaterialAlertDialogBuilder(this)
                 .setTitle("Permission required")
                 .setMessage(HtmlCompat.fromHtml(message, HtmlCompat.FROM_HTML_MODE_LEGACY))
