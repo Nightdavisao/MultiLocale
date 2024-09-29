@@ -1,17 +1,24 @@
 package io.nightdavisao.multilocale.utils
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.IPackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.content.res.Configuration
 import android.os.Build
 import android.os.LocaleList
 import android.os.RemoteException
 import android.permission.IPermissionManager
+import android.provider.Settings
 import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import com.topjohnwu.superuser.Shell
 import org.lsposed.hiddenapibypass.HiddenApiBypass
 import rikka.shizuku.ShizukuBinderWrapper
 import rikka.shizuku.SystemServiceHelper
+import java.io.IOException
+
 
 object LocaleUtils {
     private val iPackageManager by lazy {
@@ -72,4 +79,22 @@ object LocaleUtils {
         updateConfiguration.invoke(am, *arrayOf<Any>(config))
         return true
     }
+
+    fun grantConfigurationPermissionRoot(context: Context): Boolean {
+        return Shell.cmd("pm grant ${context.packageName} android.permission.CHANGE_CONFIGURATION")
+            .exec()
+            .isSuccess
+    }
+
+    fun isChangeConfigurationPermissionGranted(context: Context): Boolean {
+        return ActivityCompat.checkSelfPermission(
+            context,
+            Manifest.permission.CHANGE_CONFIGURATION
+        ) == PERMISSION_GRANTED
+    }
+
+    fun areAllPermissionsGranted(context: Context): Boolean {
+        return isChangeConfigurationPermissionGranted(context) && Settings.System.canWrite(context)
+    }
+
 }
