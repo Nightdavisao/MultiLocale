@@ -11,3 +11,5 @@ This restriction can lead to issues, such as apps displaying incorrect character
 For example, without Japanese added as a locale, apps may show Chinese characters instead of Japanese ones.
 # Releases
 [GitHub Releases](https://github.com/Nightdavisao/MultiLocale/releases)
+# Donate
+[Ko-fi](https://ko-fi.com/nightdavisao)
