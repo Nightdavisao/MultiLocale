@@ -87,7 +87,7 @@ class LocaleSettingsActivity : AppCompatActivity() {
         if (userHasChangedLocales) return
         Snackbar.make(
             binding.root,
-            "Do you want to save this locale configuration?",
+            R.string.save_cfg_are_you_sure,
             Snackbar.LENGTH_INDEFINITE
         )
             .setAction("Save") {
@@ -142,7 +142,7 @@ class LocaleSettingsActivity : AppCompatActivity() {
                 if (localesToDelete.size == adapter.localeList.size) {
                     Toast.makeText(
                         this,
-                        "You can't delete all of the locales!",
+                        R.string.cant_nuke_locales,
                         Toast.LENGTH_SHORT
                     ).show()
                     return@setOnClickListener
@@ -189,7 +189,7 @@ class LocaleSettingsActivity : AppCompatActivity() {
         binding.toolbar.menu.findItem(R.id.action_delete_locale).isVisible = !adapter.deleteMode
         // change the title of the toolbar depending on if delete mode is enabled
         binding.toolbar.title =
-            if (adapter.deleteMode) "Select locales to delete" else applicationInfo.loadLabel(
+            if (adapter.deleteMode) getString(R.string.select_locales_deletion) else applicationInfo.loadLabel(
                 packageManager
             )
         // show an X button in the toolbar if delete mode is enabled
@@ -223,15 +223,15 @@ class LocaleSettingsActivity : AppCompatActivity() {
             Log.d(TAG, "Saving locale list: $localeList")
             try {
                 LocaleUtils.setLocaleList(localeList)
-                Snackbar.make(binding.root, "Locale list saved", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.root, R.string.locale_list_saved, Snackbar.LENGTH_LONG).show()
             } catch (e: Exception) {
                 Log.e(TAG, "Failed to save locale list", e)
-                Snackbar.make(binding.root, "Failed to save locale list", Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.root, R.string.failed_to_save_locale_list, Snackbar.LENGTH_LONG)
                     .show()
             }
             userHasChangedLocales = false
         } else {
-            Toast.makeText(this, "Permissions are not granted (⊙_⊙)？", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.permissions_not_granted, Toast.LENGTH_SHORT).show()
         }
     }
 

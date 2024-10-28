@@ -50,13 +50,13 @@ class PermissionCheckActivity : AppCompatActivity() {
                             LocaleUtils.grantConfigurationPermissionShizuku(this)
                         }
                     } else {
-                        Toast.makeText(this, "Shizuku is not running or isn't installed.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.shizuku_not_found, Toast.LENGTH_SHORT).show()
                     }
                 }
                 R.id.radio_root -> {
                     // there's no programmatic way to check if root is available, so we just try to run a command and hope for the best
                     if (!LocaleUtils.grantConfigurationPermissionRoot(this)) {
-                        Toast.makeText(this, "Failed to grant permission with root", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, R.string.failed_granting_permission_root, Toast.LENGTH_LONG).show()
                     }
                 }
                 R.id.radio_adb -> showADBDialog()
@@ -99,24 +99,19 @@ class PermissionCheckActivity : AppCompatActivity() {
 
     private fun showADBDialog() {
         val adbCommand = "adb shell pm grant $packageName android.permission.CHANGE_CONFIGURATION"
-        val message = "You must grant the CHANGE_CONFIGURATION permission to this app. " +
-                "Please run the following command in an ADB shell:<br><br>" +
-                "<b>$adbCommand</b>" +
-                "<br><br>Clicking \"OK\" will copy this command to your clipboard.<br>" +
-                "Close this dialog and grant the permission manually, after you have done so, restart the app."
+        val message = getString(R.string.grant_permission_instructions, adbCommand)
         val dialog = MaterialAlertDialogBuilder(this)
-            .setTitle("Permission required")
-            .setMessage(HtmlCompat.fromHtml(message, HtmlCompat.FROM_HTML_MODE_LEGACY))
+            .setTitle(R.string.permission_required)
+            .setMessage(message)
             .setPositiveButton("OK") { _, _ ->
                 val clipboardManager = applicationContext.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                 val clipData = ClipData.newPlainText("ADB command", adbCommand)
                 clipboardManager.setPrimaryClip(clipData)
-                Toast.makeText(this, "Please grant the permission", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.pls_grant), Toast.LENGTH_LONG).show()
             }
             .setNeutralButton("What is ADB?") { _, _ ->
-                // TODO: make an actual documentation page that tells the user what ADB is and why they need it
                 val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("https://developer.android.com/studio/command-line/adb")
+                intent.data = Uri.parse("https://github.com/Nightdavisao/MultiLocale/wiki/What-is-ADB%3F")
                 startActivity(intent)
             }
             .create()
@@ -126,11 +121,8 @@ class PermissionCheckActivity : AppCompatActivity() {
 
     private fun showWriteSettingsDialog() {
         val dialog = MaterialAlertDialogBuilder(this)
-            .setTitle("Permission required")
-            .setMessage(
-                "Now you must grant the WRITE_SETTINGS permission to this app. " +
-                        "Since we can't do this ourselves, you will be taken to the settings page to grant it."
-                )
+            .setTitle(R.string.permission_required)
+            .setMessage(R.string.grant_write_permission)
             .setPositiveButton("OK") { _, _ ->
                 val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
@@ -150,7 +142,7 @@ class PermissionCheckActivity : AppCompatActivity() {
         return if (Shizuku.checkSelfPermission() == PERMISSION_GRANTED) {
             true
         } else if (Shizuku.shouldShowRequestPermissionRationale()) {
-            Toast.makeText(this, "Please grant the permission", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.pls_grant, Toast.LENGTH_LONG).show()
             false
         } else {
             Shizuku.requestPermission(code)

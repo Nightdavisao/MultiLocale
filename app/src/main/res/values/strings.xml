@@ -18,4 +18,40 @@
     <string name="shizuku">Shizuku</string>
     <string name="root">Root</string>
     <string name="adb">ADB</string>
+    <string name="permission_required">Permission required</string>
+    <string name="grant_permission_instructions">
+        You must grant the CHANGE_CONFIGURATION permission to this app.\n\n
+        Please run the following command in an ADB shell:\n\n%s\n\n
+        Clicking "OK" will copy this command to your clipboard.\n
+        Close this dialog and grant the permission manually, after you have done so, restart the app.
+    </string>
+    <string name="grant_write_permission">
+        Now you must grant the WRITE_SETTINGS permission to this app.
+        Since we can\'t do this ourselves, you will be taken to the settings page to grant it.
+    </string>
+    <string name="pls_grant">Please grant the permission</string>
+    <string name="save_cfg_are_you_sure">
+        Do you want to save this locale configuration?
+    </string>
+    <string name="cant_nuke_locales">
+        You can\'t delete all locales.
+    </string>
+    <string name="select_locales_deletion">
+        Select the locales to delete
+    </string>
+    <string name="failed_to_save_locale_list">
+        Failed to save locale list
+    </string>
+    <string name="locale_list_saved">
+        Locale list saved
+    </string>
+    <string name="permissions_not_granted">
+        Permissions are not granted…?
+    </string>
+    <string name="shizuku_not_found">
+        Shizuku is not running or isn\'t installed.
+    </string>
+    <string name="failed_granting_permission_root">
+        Failed to grant permission with root
+    </string>
 </resources>
