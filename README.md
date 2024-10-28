@@ -1,8 +1,7 @@
 # MultiLocale
 <img src="/app/src/main/ic_launcher-playstore.png" width="128"/>
 
-<img src="/assets/screenshot01.jpg" height="200"/>
-<img src="/assets/screenshot02.jpg" height="200"/>
+<img src="/assets/screenshot01.jpg" height="200"/> <img src="/assets/screenshot02.jpg" height="200"/>
 
 A simple app that enables you to add additional (or "unsupported") languages to your device's locale settings, if the OEM (*ahem* **Xiaomi**) doesn't let you.
 # Requirements
