@@ -10,8 +10,9 @@ Some OEMs, particularly Xiaomi with MIUI/HyperOS, limit users to selecting only 
 This restriction can lead to issues, such as apps displaying incorrect characters due to [Han unification](https://en.wikipedia.org/wiki/Han_unification), where characters in one language may appear in another.
 For example, without Japanese added as a locale, apps may show Chinese characters instead of Japanese ones.
 # Releases
-[![IzzyOnDroid](/assets/IzzyOnDroid.png)](https://apt.izzysoft.de/fdroid/index/apk/io.nightdavisao.multilocale)
-
+<a href="https://apt.izzysoft.de/fdroid/index/apk/io.nightdavisao.multilocale">
+  <img src="/assets/IzzyOnDroid.png" alt="IzzyOnDroid" width="100" height="20">
+</a>
 
 [GitHub Releases](https://github.com/Nightdavisao/MultiLocale/releases)
 # Donate
