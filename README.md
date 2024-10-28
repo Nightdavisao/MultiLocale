@@ -1,5 +1,8 @@
 # MultiLocale
-<img src="/app/src/main/ic_launcher-playstore.png" width="128"/> 
+<img src="/app/src/main/ic_launcher-playstore.png" width="128"/>
+
+![](/assets/screenshot01.jpg)
+![](/assets/screenshot02.jpg)
 
 A simple app that enables you to add additional (or "unsupported") languages to your device's locale settings, if the OEM (*ahem* **Xiaomi**) doesn't let you.
 # Requirements
@@ -11,7 +14,7 @@ This restriction can lead to issues, such as apps displaying incorrect character
 For example, without Japanese added as a locale, apps may show Chinese characters instead of Japanese ones.
 # Releases
 <a href="https://apt.izzysoft.de/fdroid/index/apk/io.nightdavisao.multilocale">
-  <img src="/assets/IzzyOnDroid.png" alt="IzzyOnDroid" height="150">
+  <img src="/assets/IzzyOnDroid.png" alt="IzzyOnDroid" height="100">
 </a>
 
 [GitHub Releases](https://github.com/Nightdavisao/MultiLocale/releases)
