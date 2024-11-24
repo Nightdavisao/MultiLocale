@@ -54,4 +54,8 @@
     <string name="failed_granting_permission_root">
         Failed to grant permission with root
     </string>
+    <string name="input_your_locale">Input your locale</string>
+    <string name="language_edit_text_hint">Language (required)</string>
+    <string name="country_edit_text_hint">Country</string>
+    <string name="variant_edit_text_hint">Variant</string>
 </resources>
