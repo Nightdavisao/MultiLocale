@@ -1,0 +1,1 @@
+Add additional languages to your device's locale settings
