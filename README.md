@@ -13,10 +13,14 @@ Some OEMs, particularly Xiaomi with MIUI/HyperOS, limit users to selecting only 
 This restriction can lead to issues, such as apps displaying incorrect characters due to [Han unification](https://en.wikipedia.org/wiki/Han_unification), where characters in one language may appear in another.
 For example, without Japanese added as a locale, apps may show Chinese characters instead of Japanese ones.
 # Releases
+
+<a href="https://f-droid.org/packages/io.nightdavisao.multilocale/">
+  <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="100">
+</a>
 <a href="https://apt.izzysoft.de/fdroid/index/apk/io.nightdavisao.multilocale">
-  <img src="/assets/IzzyOnDroid.png" alt="IzzyOnDroid" height="100">
+  <img src="/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="100">
 </a>
 
-[GitHub Releases](https://github.com/Nightdavisao/MultiLocale/releases)
+[GitHub Releases](https://github.com/Nightdavisao/MultiLocale/releases/latest)
 # Donate
 [Ko-fi](https://ko-fi.com/nightdavisao)
